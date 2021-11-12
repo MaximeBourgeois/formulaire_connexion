@@ -9,14 +9,54 @@ for (let i = 0; i < stopPropagationForm.length; i++) {
 function conditionConnection() {
     let mailValidate = document.getElementById("mailConnection").value;
     let passwordValidate = document.getElementById("passwordConnection").value;
+    console.log(mailValidate)
     if (mailValidate != 0 && passwordValidate != 0) {
         connection.style.display = "none";
-        welcome.style.display = "flex";
+        welcome.style.display = "block";
 
     } else {
         connection.style.display = "flex";
+        document.getElementById("mailConnection").style.borderColor = "red";
+        document.getElementById("passwordConnection").style.borderColor = "red";
     }
-    console.log(mailValidate)
 }
-document.getElementById("validateConnection").addEventListener("click", conditionConnection);
+//coche la checkbox, enregistrement et lorqu'on actualise, on reste sur la page après le formulaire
+function recording(key, value) {
+    localStorage.setItem(key, value);
+}
+function save() {
+    recording(stayConnected.id, stayConnected.checked);
+}
+function resultSave() {
+    let saveInformations = localStorage.getItem("stayConnected")
+    // rappeler que la variable existe et qu'il est vrai
+    if (saveInformations && saveInformations === "true") {
+        connection.style.display = "none";
+        welcome.style.display = "block";
+
+    } else {
+        connection.style.display = "flex";
+        welcome.style.display = "none";
+    }
+}
+document.getElementById("validateConnection").addEventListener("click", function () {
+    save();
+    resultSave();
+    conditionConnection();
+})
+resultSave();
+
+function stopRecording(key, value) {
+    localStorage.clear(key, value);
+}
+function stopSave() {
+    stopRecording(stayConnected.id, stayConnected.checked);
+}
+document.getElementById("disconnection").addEventListener("click", stopSave);
+
+function returnForm() {
+    connection.style.display = "flex";
+    welcome.style.display = "none";
+}
+document.getElementById("disconnection").addEventListener("click", returnForm);
 
