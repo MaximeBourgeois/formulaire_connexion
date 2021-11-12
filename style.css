@@ -40,3 +40,7 @@ label {
 #validateConnection:hover {
     background-color: yellow;
 }
+
+#welcome {
+    display: none;
+}
