@@ -10,7 +10,7 @@ function conditionConnection() {
     let mailValidate = document.getElementById("mailConnection").value;
     let passwordValidate = document.getElementById("passwordConnection").value;
     console.log(mailValidate)
-    if (mailValidate != 0 && passwordValidate != 0) {
+    if (mailValidate && passwordValidate !== "") {
         connection.style.display = "none";
         welcome.style.display = "block";
 
@@ -47,7 +47,8 @@ document.getElementById("validateConnection").addEventListener("click", function
 resultSave();
 
 function stopRecording(key, value) {
-    localStorage.clear(key, value);
+    // supprime tous les localStorage
+    localStorage.clear;
 }
 function stopSave() {
     stopRecording(stayConnected.id, stayConnected.checked);
