@@ -11,12 +11,16 @@
 
 <body>
     <form id="connection">
-        <h1>Se connecter</h1>
-        <label for="mailConnection">Adresse mail</label>
-        <input type="email" id="mailConnection" placeholder="Votre adresse mail" />
-        <label for="passwordConnection">Mot de passe</label>
-        <input type="password" id="passwordConnection" placeholder="Mot de passe" />
-        <input type="submit" id="validateConnection" value="Valider" />
+        <div id="containConnection">
+            <h1>Se connecter</h1>
+            <label for="mailConnection">Adresse mail :</label>
+            <input type="email" id="mailConnection" placeholder="Votre adresse mail" />
+            <label for="passwordConnection">Mot de passe :</label>
+            <input type="password" id="passwordConnection" placeholder="Mot de passe" />
+            <input type="submit" id="validateConnection" value="Valider" />
+            <label for="stayConnected">Rester connecté(e)</label>
+            <input type="checkbox" id="stayConnected" />
+        </div>
     </form>
     <script src="script.js"></script>
 </body>

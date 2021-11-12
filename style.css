@@ -1,0 +1,42 @@
+body {
+    font-family: "Arial";
+    width:100%;
+    height:100%;
+}
+
+#connection {
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+
+#containConnection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:40%;
+    height:300px;
+    background-color:yellow;
+    border-radius: 5px;
+}
+
+label {
+    margin-top: 10px;
+ 
+}
+
+#mailConnection, #passwordConnection {
+    border-radius: 10px;
+    width:60%;
+    height: 30px;
+}
+
+#validateConnection {
+    margin-top: 10px;
+    border-radius: 10px;
+    width:20%;
+}
+
+#validateConnection:hover {
+    background-color: yellow;
+}
